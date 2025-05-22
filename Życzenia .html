@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+ <meta charset="UTF-8" />
+ <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+ <title>Wielkanocny Króliczek</title>
+ <style>
+   body {
+     margin: 0;
+     padding: 0;
+     background-color: #E6E6FA;
+     font-family: Arial, sans-serif;
+     text-align: center;
+     overflow: hidden;
+   }
+
+   h1 {
+     margin-top: 60px;
+     font-size: 3em;
+     text-shadow: 2px 2px 5px rgba(0,0,0,0.3);
+   }
+
+   .bunny {
+     position: absolute;
+     top: 50%;
+     transform: translateY(-50%);
+     width: 100px;
+     height: 160px;
+     animation: hop 3s ease-in-out infinite alternate,
+                move 6s ease-in-out infinite alternate;
+   }
+
+   @keyframes move {
+     0% { left: 0; }
+     100% { left: calc(100% - 100px); }
+   }
+
+   @keyframes hop {
+     0%, 100% { transform: translateY(-50%) translateY(0); }
+     50% { transform: translateY(-50%) translateY(-30px); }
+   }
+
+   .ear {
+     width: 20px;
+     height: 60px;
+     background: white;
+     border: 2px solid gray;
+     border-radius: 10px;
+     position: absolute;
+     top: 0;
+   }
+
+   .ear.left {
+     left: 20px;
+   }
+
+   .ear.right {
+     right: 20px;
+   }
+
+   .head {
+     width: 80px;
+     height: 80px;
+     background: white;
+     border: 2px solid gray;
+     border-radius: 50%;
+     position: absolute;
+     top: 50px;
+     left: 10px;
+   }
+
+   .eye {
+     width: 10px;
+     height: 10px;
+     background: black;
+     border-radius: 50%;
+     position: absolute;
+     top: 25px;
+   }
+
+   .eye.left {
+     left: 20px;
+   }
+
+   .eye.right {
+     right: 20px;
+   }
+
+   .nose {
+     width: 10px;
+     height: 10px;
+     background: pink;
+     border-radius: 50%;
+     position: absolute;
+     top: 45px;
+     left: 35px;
+   }
+
+   .paw {
+     width: 15px;
+     height: 15px;
+     background: white;
+     border: 2px solid gray;
+     border-radius: 50%;
+     position: absolute;
+   }
+
+   .paw.front.left {
+     top: 120px;
+     left: 10px;
+   }
+
+   .paw.front.right {
+     top: 120px;
+     right: 10px;
+   }
+
+   .paw.back.left {
+     top: 135px;
+     left: 20px;
+   }
+
+   .paw.back.right {
+     top: 135px;
+     right: 20px;
+   }
+
+   .grass {
+     position: absolute;
+     bottom: 0;
+     width: 100%;
+     height: 100px;
+     background: linear-gradient(to top, #228B22, #32CD32);
+   }
+
+   .egg {
+     position: absolute;
+     bottom: 10px;
+     width: 40px;
+     height: 50px;
+     border-radius: 50%;
+     animation: appearDisappear 5s ease-in-out infinite;
+     opacity: 0;
+   }
+
+   .egg:nth-child(3) {
+     left: 10%;
+     background: radial-gradient(circle, #FFD700, #FFA500);
+     animation-delay: 0s;
+   }
+
+   .egg:nth-child(4) {
+     left: 25%;
+     background: radial-gradient(circle, #FF69B4, #FF1493);
+     animation-delay: 1s;
+   }
+
+   .egg:nth-child(5) {
+     left: 40%;
+     background: radial-gradient(circle, #00CED1, #20B2AA);
+     animation-delay: 2s;
+   }
+
+   .egg:nth-child(6) {
+     left: 55%;
+     background: radial-gradient(circle, #9370DB, #8A2BE2);
+     animation-delay: 3s;
+   }
+
+   .egg:nth-child(7) {
+     left: 70%;
+     background: radial-gradient(circle, #ADFF2F, #7CFC00);
+     animation-delay: 4s;
+   }
+
+   .egg:nth-child(8) {
+     left: 85%;
+     background: radial-gradient(circle, #F08080, #CD5C5C);
+     animation-delay: 5s;
+   }
+
+   @keyframes appearDisappear {
+     0%, 100% { opacity: 0; }
+     50% { opacity: 1; }
+   }
+
+   .message {
+     margin-top: 250px;
+     font-size: 1.5em;
+     color: #444;
+   }
+ </style>
+</head>
+<body>
+ <h1>Wesołych Świąt Wielkanocnych!</h1>
+
+ <div class="bunny">
+   <div class="ear left"></div>
+   <div class="ear right"></div>
+   <div class="head">
+     <div class="eye left"></div>
+     <div class="eye right"></div>
+     <div class="nose"></div>
+   </div>
+   <div class="paw front left"></div>
+   <div class="paw front right"></div>
+   <div class="paw back left"></div>
+   <div class="paw back right"></div>
+ </div>
+
+ <div class="grass"></div>
+
+ <!-- Pisanki -->
+ <div class="egg"></div>
+ <div class="egg"></div>
+ <div class="egg"></div>
+ <div class="egg"></div>
+ <div class="egg"></div>
+ <div class="egg"></div>
+
+ <p class="message">Niech króliczek przyniesie Ci radość, spokój i uśmiech!</p>
+</body>
+</html>
